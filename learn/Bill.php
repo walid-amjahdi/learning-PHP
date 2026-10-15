@@ -1,7 +1,13 @@
 <?php
 
+$price = $_GET["price"];
+$tip = $_GET["tip"];
+$people = $_GET["people"];
 
+$price = $price - ($price * $tip / 100);
 
+if ($people != 0)
+    $price /= $people ;
 
 ?>
 
@@ -32,6 +38,8 @@
             <br><br>
             <button type="submit">Calculate:</button>
         </form>
+
+        <h3>You will pay : <?php echo $price ; ?></h3>
         
     </body>
     </html>
